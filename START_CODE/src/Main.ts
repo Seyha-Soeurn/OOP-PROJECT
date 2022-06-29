@@ -206,13 +206,16 @@ let date3 = new DateTime(6, 11, 2022, 9);
 let date4 = new DateTime(6, 11, 2022, 10);
 let date5 = new DateTime(30, 2, 2020, 12);
 let date6 = new DateTime(30, 2, 2020, 14);
+let date7 = new DateTime(30, 2, 2020, 9);
+let date8 = new DateTime(30, 2, 2020, 16);
 
-let order1 = new OnlineOrder(1, customerRonan, date1, date2, deliveryChhat, 2);
-let order2 = new OnlineOrder(2, customerRonan, date3, date4, deliveryChhay, 1.5);
-let order3 = new OnlineOrder(3, customerSoriya, date5, date6, deliveryUdom, 2);
-let order4 = new InRestaurantOrder(4, customerSoriya, date1, table1, waiterNalang);
-let order5 = new InRestaurantOrder(5, customerAlucard, date1, table2, waiterNaroth);
+let order1 = new OnlineOrder(1, customerRonan, date5, date6, deliveryChhat, 2);
+let order2 = new OnlineOrder(2, customerRonan, date1, date2, deliveryChhay, 1.5);
+let order3 = new OnlineOrder(3, customerSoriya, date7, date8, deliveryUdom, 2);
+let order4 = new InRestaurantOrder(4, customerSoriya, date3, table1, waiterNalang);
+let order5 = new InRestaurantOrder(5, customerAlucard, date6, table2, waiterNaroth);
 let order6 = new InRestaurantOrder(6, customerAlucard, date5, table3, waiterRatha);
+let order7 = new InRestaurantOrder(4, customerSoriya, date4, table1, waiterNalang);
 
 // Add foods to order
 order1.addFoodOrders(new FoodOrder(food1, 2), new FoodOrder(food2, 1), new FoodOrder(drink2, 3));
@@ -221,6 +224,7 @@ order3.addFoodOrders(new FoodOrder(food5, 2), new FoodOrder(food2, 3), new FoodO
 order4.addFoodOrders(new FoodOrder(food4, 1), new FoodOrder(drink4, 3));
 order5.addFoodOrders(new FoodOrder(food3, 5), new FoodOrder(food5, 1), new FoodOrder(drink2, 3));
 order6.addFoodOrders(new FoodOrder(food3, 2), new FoodOrder(food1, 1));
+order7.addFoodOrders(new FoodOrder(food5, 4), new FoodOrder(food3, 2));
 
 // Add orders to restaurant
 restaurant.addOrder(order1);
@@ -229,6 +233,7 @@ restaurant.addOrder(order3);
 restaurant.addOrder(order4);
 restaurant.addOrder(order5);
 restaurant.addOrder(order6);
+restaurant.addOrder(order7);
 
 // Pay on order
 restaurant.getOrders().payOrder(order1);
@@ -275,8 +280,8 @@ restaurant.getOrders().payOrder(order5);
 // console.log(restaurant.getOrders().getInRestaurantOrders());
 // console.log(restaurant.getOrders().getOrdersPriceLessThan(15));
 // console.log(restaurant.getOrders().getOrdersPriceGreaterThan(20));
-// console.log(restaurant.getOrders().getOrdersByDate(date1));
-// console.log(restaurant.getTotalSellOnDate(date1));
+console.log(restaurant.getOrders().getOrdersByDate(date5));
+console.log(restaurant.getTotalSellOnDate(date5));
 
 
 
